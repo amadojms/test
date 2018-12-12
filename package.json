@@ -5,11 +5,17 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "apollo": "vue-cli-service apollo:watch --run \"vue-cli-service serve\"",
+    "apollo:run": "vue-cli-service apollo:run"
   },
   "dependencies": {
+    "graphql-type-json": "^0.2.1",
     "register-service-worker": "^1.5.2",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-apollo": "^3.0.0-beta.11",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
@@ -18,7 +24,10 @@
     "@vue/cli-service": "^3.2.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
+    "eslint-plugin-graphql": "^2.1.1",
     "eslint-plugin-vue": "^5.0.0-0",
+    "graphql-tag": "^2.9.0",
+    "vue-cli-plugin-apollo": "^0.18.1",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
@@ -30,10 +39,21 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "graphql/template-strings": [
+        "error",
+        {
+          "env": "literal",
+          "projectName": "app"
+        }
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
-    }
+    },
+    "plugins": [
+      "graphql"
+    ]
   },
   "postcss": {
     "plugins": {
