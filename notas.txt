@@ -1,0 +1,13 @@
+yarn run apollo
+ INFO  apollo  Start the GraphQL API Server with yarn run apollo
+ INFO  apollo  Customize the mocks in apollo-server/mocks.js
+ INFO  apollo  The Apollo Engine API key has been added to .env.local
+
+ -------------
+
+ yarn run serve
+
+ ----------------
+
+
+ vue ui
